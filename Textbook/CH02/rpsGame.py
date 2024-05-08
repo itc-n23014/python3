@@ -2,29 +2,29 @@ import random, sys
 
 print('最初はグー,じゃんけん…')
 
-wins, losses, ties = 0, 0, 0
+win, losse, tie = 0, 0, 0
 moves = {'r': 'グー', 'p': 'パー', 's': 'チョキ'}
 
 while True:
     
-    player_move = input('(r)グー (p)パー (s)チョキ or (q)やめる: ')
-    if player_move == 'q': sys.exit()
-    if player_move not in moves: print('r,p,s,qの中から選択してください.'); continue
+    move = input('(r)グー (p)パー (s)チョキ or (q)やめる: ')
+    if move == 'q': sys.exit()
+    if move not in moves: print('r,p,s,qの中から選択してください.'); continue
 
-    computer_move = random.choice(list(moves.keys()))
-    print(f'{moves[player_move]} 対 {moves[computer_move]}')
+    move2 = random.choice(list(moves.keys()))
+    print(f'{moves[move]} 対 {moves[move2]}')
 
-    if player_move == computer_move:
+    if move == move2:
         print('あいこ!')
-        ties += 1
-    elif (player_move == 'r' and computer_move == 's') or \
-         (player_move == 'p' and computer_move == 'r') or \
-         (player_move == 's' and computer_move == 'p'):
+        tie += 1
+    elif (move == 'r' and move2 == 's') or \
+         (move == 'p' and move2 == 'r') or \
+         (move == 's' and move2 == 'p'):
         print('勝ち!')
-        wins += 1
+        win += 1
     else:
         print('負け!')
-        losses += 1
+        losse += 1
 
-    print(f'{wins} 勝ち, {losses} 負け, {ties} あいこ')
+    print(f'{win} 勝ち, {losse} 負け, {tie} あいこ')
 
