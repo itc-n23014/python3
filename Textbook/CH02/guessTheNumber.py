@@ -1,4 +1,4 @@
-from random import randint
+from random import randint #モジュール内の関数を直接呼び出す
 
 num = randint(1, 20)
 print("数字を当ててください(1~20)")

@@ -1,8 +1,8 @@
-import random, sys
+import random, sys #sysモジュールでPythonを終了
 
 print('最初はグー,じゃんけん…')
 
-win, losse, tie = 0, 0, 0
+win, lose, tie = 0, 0, 0
 moves = {'r': 'グー', 'p': 'パー', 's': 'チョキ'}
 
 while True:
@@ -24,7 +24,7 @@ while True:
         win += 1
     else:
         print('負け!')
-        losse += 1
+        lose += 1
 
-    print(f'{win} 勝ち, {losse} 負け, {tie} あいこ')
+    print(f'{win} 勝ち, {lose} 負け, {tie} あいこ')
 
