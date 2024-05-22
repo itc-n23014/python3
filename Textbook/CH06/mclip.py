@@ -12,8 +12,6 @@ if len(sys.argv) < 2:
          
 status = sys.argv[1]
 
-if status in text:
-    pyperclip.copy(text[status])
-    print(f"{status}に関するテキストをコピーします。")
-else:
-    print('agree | busy | upsell の中から選択してください')
+if status in text: pyperclip.copy(text[status]); print(f"{status}に関するテキストをコピーします。")
+else: print('agree | busy | upsell の中から選択してください')
+
