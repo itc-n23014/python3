@@ -6,8 +6,7 @@ text = {'agree': 'そうですね。私も賛同します。それが良いと�
 
 
 if len(sys.argv) < 2:
-    print('python myclip.py [キーフレーズ名]')
-    print('agree | busy | upsell の中から選択してください')
+    print('python myclip.py [キーフレーズ名]\nagree | busy | upsell の中から選択してください')
     sys.exit()
          
 status = sys.argv[1]
