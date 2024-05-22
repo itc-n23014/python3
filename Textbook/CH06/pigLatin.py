@@ -7,6 +7,5 @@ def pig_latin(text):
         for word in text.split()
     )
 
-text = input()
+text = input('英文をピッグラテンに翻訳します:\n')
 print(pig_latin(text))
-
