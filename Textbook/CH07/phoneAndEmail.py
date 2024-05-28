@@ -8,5 +8,5 @@ def find_num_add(text):
 
 
 ml, pl = find_num_add(text:=pyperclip.paste())
-print(f"メアド{len(ml)}件: {', '.join(ml)} \n電話番号{len(pl)}件: {', '.join(pl)}")
+print(f"クリップボードから情報を取得しています.\nメアド{len(ml)}件: {', '.join(ml)} \n電話番号{len(pl)}件: {', '.join(pl)}")
 
