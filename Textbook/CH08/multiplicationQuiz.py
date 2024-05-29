@@ -7,15 +7,14 @@ questions = [f"{a}*{b}=" for a, b in [(randint(0, 9), randint(0, 9)) for _ in ra
 for q in questions:
     ans = eval(q[:-1])
     try:
-        for _ in range(3):
-            u_ans = p.inputInt(f'{q}', timeout=8, limit=3)
-            if ans == u_ans:
-                print("正解")
-                time.sleep(1)
-                break
-            else:
-                print('不正解')
+        u_ans = p.inputInt(q, allowRegexes=[f'^{ans}$','正解！'],
+                              blockRegexes=[('.*', '不正解!')],
+                              timeout=8, limit=3)
     except p.TimeoutException:
         print("時間切れ!")
     except p.RetryLimitException:
         print("回数制限超え！")
+    else:
+        print("正解！")
+        time.sleep(1)
+
