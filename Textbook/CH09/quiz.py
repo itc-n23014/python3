@@ -1,6 +1,6 @@
-import random 
+import random
 
-capitals = {'北海道': '札幌市', '青森県': '青森市', '岩手県': '盛岡市', 
+capitals = {'北海道': '札幌市', '青森県': '青森市', '岩手県': '盛岡市',
   '宮城県': '仙台市', '秋田県': '秋田市', '山形県': '山形市', '福島県': '福島市',
   '茨城県': '水戸市', '栃木県': '宇都宮市', '群馬県': '前橋市',
   '埼玉県': 'さいたま市', '千葉県': '千葉市', '東京都': '東京',
@@ -15,17 +15,17 @@ capitals = {'北海道': '札幌市', '青森県': '青森市', '岩手県': '�
   '宮崎県': '宮崎市', '鹿児島県': '鹿児島市', '沖縄県': '那覇市'}
 
 for k in range(35):
-	q_file = open(f'Test{k+1}.txt','w')
-	ans_file = open(f'Ans{k+1}.txt','w')
-	q_file.write('県庁所在地クイズ！!\n名前:\n日付:\n')
-	ken = [i for i in capitals.keys()]
-	random.shuffle(ken)
-	for j in range(47):
-		r_ans = capitals[ken[j]]
-		w_ans = [i for i in capitals.values() if i != capitals[ken[j]]]
-		op = ([r_ans] + random.sample(w_ans,3))
-		random.shuffle(op)
-		op2 = {0: 'A', 1: 'B', 2: 'C', 3: 'D'}
-		q_file.write(f'{ken[j]}の県庁所在地は?\n' + '\n'.join([f'{op2[op.index(o)]}:{o}' for o in op]) + '\n\n')
-		op2[op.index(r_ans)]
+    q_file = open(f'Test{k+1}.txt','w')
+    ans_file = open(f'Ans{k+1}.txt','w')
+    q_file.write('県庁所在地クイズ！!\n名前:\n日付:\n')
+    ken = [i for i in capitals.keys()]
+    random.shuffle(ken)
+    for j in range(47):
+        r_ans = capitals[ken[j]]
+        w_ans = [i for i in capitals.values() if i != capitals[ken[j]]]
+        op = ([r_ans] + random.sample(w_ans,3))
+        random.shuffle(op)
+        op2 = {0: 'A', 1: 'B', 2: 'C', 3: 'D'}
+        q_file.write(f'{ken[j]}の県庁所在地は?\n' + '\n'.join([f'{op2[op.index(o)]}:{o}' for o in op]) + '\n\n')
+        ans_file.write(f'第{j}問目の解答:{op2[op.index(r_ans)]}:{op[op.index(r_ans)]}\n')
 
