@@ -1,5 +1,4 @@
-import shelve
-import sys
+import shelve,sys
 import pyperclip as p
 
 mcb_s = shelve.open('mcb')
