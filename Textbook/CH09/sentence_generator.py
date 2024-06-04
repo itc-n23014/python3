@@ -11,15 +11,14 @@ def filling(noun, adjective, verb):
 
     return filled
 
-if __name__ == "__main__":
-    if len(sys.argv) < 4:
-        print("Usage: python3 script.py [名詞] [形容詞] [動詞]")
-        sys.exit(1)
+if len(sys.argv) < 4:
+    print("Usage: python3 script.py [名詞] [形容詞] [動詞]")
+    sys.exit(1)
 
-    noun = sys.argv[1]
-    adjective = sys.argv[2]
-    verb = sys.argv[3]
+noun = sys.argv[1]
+adjective = sys.argv[2]
+verb = sys.argv[3]
 
-    result = filling(noun, adjective, verb)
-    print(result)
+result = filling(noun, adjective, verb)
+print(result)
 
