@@ -1,24 +1,22 @@
 import sys
 import re
 
-def filling(noun, adjective, verb):
+def filling(n, a, v):
     with open("sec.txt", "r") as file:
         template = file.read()
 
-    filled = re.sub(r'\[名詞\]', noun, template)
-    filled = re.sub(r'\[形容詞\]', adjective, filled)
-    filled = re.sub(r'\[動詞\]', verb, filled)
+    filled = re.sub(r'\[名詞\]', n, template)
+    filled = re.sub(r'\[形容詞\]', a, filled)
+    filled = re.sub(r'\[動詞\]', v, filled)
 
     return filled
 
+arg = sys.argv
 if len(sys.argv) < 4:
     print("Usage: python3 script.py [名詞] [形容詞] [動詞]")
     sys.exit(1)
 
-noun = sys.argv[1]
-adjective = sys.argv[2]
-verb = sys.argv[3]
+n,a,v = arg[1],arg[2],arg[3]
 
-result = filling(noun, adjective, verb)
+result = filling(n, a, v)
 print(result)
-
