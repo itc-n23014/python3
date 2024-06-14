@@ -10,7 +10,7 @@ message = input('URLを入力してください:')
 MY_ADDRESS = 'YOUR_ID'
 MY_PASSWORD = 'YOUR_PASSWORD'  
 
-browser = webdriver.Firefox()
+browser = webdriver.Chrome()
 browser.get('https://mail.yahoo.co.jp')
 
 WebDriverWait(browser, 10).until(
