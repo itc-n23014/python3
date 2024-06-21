@@ -1,20 +1,13 @@
-import openpyxl,sys
+import openpyxl
 
-if len(sys.argv) < 2:
-    sys.exit('使い方: python script.py [スプレッドシート]')
-
-src = sys.argv[1] 
-
-wb = openpyxl.load_workbook(src)
+wb = openpyxl.load_workbook('example.xlsx')
 sheet = wb.active
 
-new_wb = openpyxl.Workbook()
-new_sheet = new_wb.active
+s_wb = openpyxl.Workbook()
+s_sheet = s_wb.active
 
-for row in range(1, sheet.max_row + 1):
-    for col in range(1, sheet.max_column + 1):
-        old_cell = sheet.cell(column=col, row=row)
-        new_cell = new_sheet.cell(column=row, row=col)
-        new_cell.value = old_cell.value
+data = list(sheet.iter_rows(values_only=True))
+[s_sheet.cell(row=i+1, column=j+1, value=value) for i, row in enumerate(zip(*data)) for j, value in enumerate(row)]
 
-new_wb.save(src + '.swap.xlsx')
+s_wb.save('example.swap.xlsx')
+
